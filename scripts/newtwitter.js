@@ -45,6 +45,10 @@ r.textContent = 'Open this page in OldTwitter';
 r.style.cssText = 'position: fixed; top: 0; right: 10px; padding: 0.5em; background: #fff; color: #000; font-family: Arial, sans-serif;border-radius:3px;';
 document.body.appendChild(r);
 
+if (typeof chrome !== 'undefined' && chrome.i18n && chrome.i18n.getMessage) {
+    r.textContent = chrome.i18n.getMessage('open_oldtwitter') || 'Open this page in OldTwitter';
+}
+
 setTimeout(() => {
     let realPath = location.pathname.split('?')[0].split('#')[0];
     if (realPath.endsWith("/")) {

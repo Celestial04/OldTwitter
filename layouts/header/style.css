@@ -581,6 +581,20 @@ input, textarea {
     background-image: linear-gradient(var(--background-color),var(--border));
     border-color: var(--border);
 }
+.nice-button:hover:not([disabled]),
+.nice-button:focus:not([disabled]) {
+    color: var(--almost-black);
+    text-decoration: none;
+    background-color: var(--border);
+    background-image: linear-gradient(var(--background-color),var(--border));
+    border-color: var(--border);
+}
+.nice-button:active:not([disabled]) {
+    background-color: var(--darker-background-color);
+    background-image: none;
+    color: var(--almost-black);
+    border-color: var(--border);
+}
 .nice-button:disabled {
     color: gray !important;
     cursor: not-allowed;

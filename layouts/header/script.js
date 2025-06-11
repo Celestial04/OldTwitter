@@ -110,16 +110,14 @@ function switchModernUI(enabled) {
             /* buttons */
             .nice-button {
                 border-radius: 999px !important;
-                background-image: var(--link-color);
-                background-color: var(--link-color);
-                border: none;
-                color: white;
+                background-color: var(--link-color) !important;
+                border: none !important;
+                color: white !important;
             }
-            .nice-button:hover:not([disabled]) {
+            .nice-button:hover {
                 filter: brightness(0.9);
-                background-image: var(--link-color);
-                background-color: var(--link-color);
-                color: white;
+                background-color: var(--link-color) !important;
+                color: white !important;
             }
             .nice-button:disabled {
                 color: white !important;
@@ -130,21 +128,19 @@ function switchModernUI(enabled) {
                 opacity:0.6;
             }
             .nice-red-button {
-                color: #white !important;
-                background-image: #BA172C !important;
+                color: white !important;
                 background-color: #BA172C !important;
             }
-            .nice-red-button:hover:not([disabled]) {
+            .nice-red-button:hover:not([disabled]),
+            .nice-red-button:active:not([disabled]) {
                 color: white !important;
-                background-image: #BA172C !important;
                 background-color: #BA172C !important;
             }
             #navbar-tweet-button {
                 border-radius: 999px !important;
-                background-image: var(--link-color);
-                background-color: var(--link-color);
+                background-color: var(--link-color) !important;
                 border: none !important;
-                color: white;
+                color: white !important;
                 font-weight: bold;
             }
             .tweet-header-follow {
@@ -2443,12 +2439,12 @@ let userDataFunction = async user => {
                     .user-stat-div {text-decoration: none !important;}
                     ${modernUIEnabled ? html`
                     .nice-button {color: var(--almost-black);background-color: var(--darker-background-color);background-image: var(--link-color);background-color: var(--link-color);background-repeat: no-repeat;border: none;border-radius: 999px;color: white;cursor: pointer;font-size: 14px;font-weight: bold;line-height: normal;padding: 8px 16px;}
-                    .nice-button:hover:not([disabled]) {filter: brightness(0.9);}
+                    .nice-button:hover {filter: brightness(0.9);}
                     .nice-button:disabled {opacity:0.6;}
                     .nice-button:disabled:before {opacity:0.6;}
                     .follow{border: 1px solid var(--link-color) !important;color:var(--link-color) !important;background-image: var(--background-color) !important;background-color: var(--background-color) !important;}`:html`
                     .nice-button {color: var(--almost-black);background-color: var(--darker-background-color);background-image: linear-gradient(var(--background-color),var(--darker-background-color));background-repeat: no-repeat;border: 1px solid var(--border);border-radius: 4px;color: var(--darker-gray);cursor: pointer;font-size: 14px;font-weight: bold;line-height: normal;padding: 8px 16px;}
-                    .nice-button:hover:not([disabled]) {color: var(--almost-black);text-decoration: none;background-color: var(--border);background-image: linear-gradient(var(--background-color),var(--border));border-color: var(--border);}
+                    .nice-button:hover {color: var(--almost-black);text-decoration: none;background-color: var(--border);background-image: linear-gradient(var(--background-color),var(--border));border-color: var(--border);}
                     .nice-button:disabled {color: lightgray !important;cursor: not-allowed;}
                     .nice-button:disabled:before {color: lightgray !important;}`}
                     .emoji {height: 16px;margin-left: 2px;margin-right: 2px;vertical-align: text-top;width: 16px;}
