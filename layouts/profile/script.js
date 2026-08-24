@@ -1171,6 +1171,16 @@ async function renderLists() {
 let months = [];
 let everAddedAdditional = false;
 let toAutotranslate = false;
+function formatProfileDate(dateParts) {
+    if(dateParts.year && typeof dateParts.month === 'number') {
+        return LOC.mmddyy.message.replace('$YEAR$', dateParts.year).replace('$MONTH$', months[dateParts.month - 1]).replace('$DATE$', dateParts.day);
+    } else if(typeof dateParts.month === 'number') {
+        return LOC.mmdd.message.replace('$MONTH$', months[dateParts.month - 1]).replace('$DATE$', dateParts.day);
+    } else if(dateParts.year) {
+        return LOC.yyyy.message.replace('$YEAR$', dateParts.year);
+    }
+    return '';
+}
 async function renderProfile() {
     let banner = document.getElementById('profile-banner');
     if(pageUser.profile_banner_url) {
@@ -1875,7 +1885,8 @@ async function renderProfile() {
     }
     let joined = document.createElement('span');
     joined.classList.add('profile-additional-thing', 'profile-additional-joined');
-    joined.innerText = `${LOC.joined.message} ${new Date(pageUser.created_at).toLocaleDateString(LANGUAGE.replace("_", "-"), {month: 'long', year: 'numeric', day: 'numeric'})}`;
+    let joinedDate = new Date(pageUser.created_at);
+    joined.innerText = `${LOC.joined.message} ${formatProfileDate({year: joinedDate.getFullYear(), month: joinedDate.getMonth() + 1, day: joinedDate.getDate()})}`;
     additionalInfo.appendChild(joined);
     if(pageUser.birthdate) {
         let birth = document.createElement('span');
@@ -1883,13 +1894,7 @@ async function renderProfile() {
         if(user.id_str === pageUser.id_str) {
             birth.classList.add('profile-additional-birth-me');
         }
-        if(pageUser.birthdate.year && typeof pageUser.birthdate.month === 'number') {
-            birth.innerText = `${LOC.born.message} ${LOC.mmddyy.message.replace('$YEAR$',pageUser.birthdate.year).replace('$MONTH$',months[pageUser.birthdate.month-1]).replace("$DATE$", pageUser.birthdate.day)}`;
-        } else if(typeof pageUser.birthdate.month === 'number') {
-            birth.innerText = `${LOC.born.message}  ${LOC.mmdd.message.replace('$MONTH$',months[pageUser.birthdate.month-1]).replace("$DATE$", pageUser.birthdate.day)}`;
-        } else if(pageUser.birthdate.year) {
-            birth.innerText = `${LOC.born.message} ${LOC.yyyy.message.replace('$YEAR$',pageUser.birthdate.year)}`;
-        }
+        birth.innerText = `${LOC.born.message} ${formatProfileDate(pageUser.birthdate)}`;
         let date = new Date();
         if(pageUser.birthdate.month-1 === date.getMonth() && pageUser.birthdate.day === date.getDate()) {
             birth.innerText += ' ' + LOC.birthday_today.message;

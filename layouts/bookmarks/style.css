@@ -67,14 +67,15 @@ body {
     border-radius: 7px;
 }
 #user-name {
-    margin: 0;
-    left: 95px;
-    font-size: 22px;
-    position: relative;
+    text-overflow: ellipsis;
     bottom: 47px;
+    color: var(--almost-black);
+    font-size: 22px;
+    left: 95px;
+    margin: 0;
+    position: relative;
     width: 195px;
     overflow-x: hidden;
-    color: var(--almost-black);
     overflow-y: hidden;
     white-space: nowrap;
 }
@@ -820,6 +821,10 @@ a:hover,
     }
     #user-banner {
         width: 258px;
+    }
+    #user-name {
+        font-size: 20px;
+        width: 152px;
     }
     .user-stat-div>h2 {
         font-size: 12px;

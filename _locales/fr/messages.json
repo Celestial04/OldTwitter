@@ -39,7 +39,7 @@
     "minutes": { "message": "Minutes" },
     "remove_poll": { "message": "Supprimer le sondage" },
     "open_newtwitter": { "message": "Ouvrir cette page avec la nouvelle apparence de Twitter" },
-    "last_version": { "message": "dernière version" },
+    "last_version": { "message": "dernière version " },
     "thank_you": {
         "message": "Merci d'avoir installé OldTwitter !! J'espère que vous l'aimerez. Allez jeter un coup d'œil aux <a target=\"_blank\" href=\"/old/settings\">paramètres de l'extension</a> !",
         "placeholders": {
@@ -378,7 +378,7 @@
     "developer_mode": { "message": "Mode développeur.euse" },
     "copy_user_id": { "message": "Copier l'identifiant de l'utilisateur.rice" },
     "copy_tweet_id": { "message": "Copier l'identifiant du tweet" },
-    "unfollowers": { "message": "désabonné.e.s" },
+    "unfollowers": { "message": "Désabonné.e.s" },
     "unfollowings": { "message": "désabonnement.s" },
     "no_unfollowers": { "message": "Vous n'avez pas encore de désabonné.e.s !" },
     "no_unfollowings": { "message": "Vous ne vous êtes pas encore désabonné.e de qui que ce soit !" },
@@ -426,7 +426,7 @@
     "muted_convo": { "message": "Conversation muette" },
     "unmuted_convo": { "message": "Conversation non-muette" },
     "show_media_count": { "message": "Montrer le compteur de médias sur les profils" },
-    "media": { "message": "Média", "note": "Keep this short" },
+    "media": { "message": "Médias", "note": "Keep this short" },
     "pin_profile_on_navbar": { "message": "Épingler le lien du profil sur la barre de navigation" },
     "pin_bookmarks_on_navbar": { "message": "Épingler le lien des marque-pages sur la barre de navigation" },
     "pin_lists_on_navbar": { "message": "Épingler le lien des listes sur la barre de navigation" },
@@ -483,7 +483,7 @@
     "light_mode_vars": { "message": "Variables du mode clair" },
     "dark_mode_vars": { "message": "Variables du mode sombre" },
     "css_theme_hint": { "message": "S'il vous plait, ne publiez pas de styles dangereux ou trompeur (comme rendre le bouton Suivre très gros ou quelque chose du même goût), vous perdrez votre accès ainsi.<br><br>Votre CSS supplantera le style local de l'utilisateur.rice.<br><br>Vous pouvez utiliser uniquement i.imgur.com pour les images et fonts.googleapis.com pour les polices d'écritures (et les polices d'<a target='_blank' href='https://dimden.dev/fonts/'>ici</a>).<br><br>Vous pouvez voir la liste des variables CSS <a href='https://github.com/dimdenGD/OldTwitter/blob/5e235a0a7435083428bddd7d43123e2afa344cba/scripts/injection.js#L252' target='_blank'>ici</a>.<br><br>Pour viser des thèmes spécifiques vous pouvez utiliser les classes <code>.body-dark</code>, <code>.body-pitch-black</code> (qui incluera également <code>.body-dark</code>) et <code>.body-light</code>." },
-    "profile_colors_moved": { "message": "Lien de synchronisation des couleurs déplacé vers votre profil (le pinceau à droite depuis le bouton Editer profil)." },
+    "profile_colors_moved": { "message": "" },
     "click_here_more_info": { "message": "Cliquer ici pour plus d'information" },
     "profile_must_be_public_to_auth": { "message": "Votre profil doit être public pour la première synchronisation. Vous pouvez ensuite le remettre en privé." },
     "save_draft": { "message": "Sauvegarder brouillon", "note": "Try to keep this short" },
@@ -590,37 +590,37 @@
     "you_sent_video": { "message": "Vous avez envoyé.e une vidéo" },
     "you_reacted_message": { "message": "Vous avez réagi.e à un message" },
     "user_added": { "message": "$A1$$USER_WHO_ADDED$$A_END$ a ajouté.e $A2$$USER_WHO_JOINED$$A_END$", "description": "This is used when a group admin adds a user to the group chat (display names)", "placeholders": {
-        "user_who_added": { "content": "Group Admin" },
-        "user_who_joined": { "content": "Group Admin's Friend" },
+        "user_who_added": { "content": "Administrateur du groupe" },
+        "user_who_joined": { "content": "Un ami de l'administrateur du groupe" },
         "a1": { "content": "<a href=\"/GroupAdmin\">" },
         "a2": { "content": "<a href=\"/GroupAdminsFriend\">" },
         "a_end": { "content": "</a>" }
     } },
     "user_left": { "message": "$A_START$$NAME$$A_END$ est parti.e", "description": "This is used when a user in a group leaves (display name)", "placeholders": {
-        "name": { "content": "Group Admin's Friend" },
+        "name": { "content": "Un ami de l'administrateur du groupe" },
         "a_start": { "content": "<a href=\"/@GroupAdminsFriend\">" },
         "a_end": { "content": "</a>" }
     } },
     "user_changed_group_photo": { "message": "$A_START$$NAME$$A_END$ a changé.e la photo de groupe", "description": "This is used when a user in a group changes the group photo (display name)", "placeholders": {
-        "name": { "content": "Group Admin" },
+        "name": { "content": "Administrateur du groupe" },
         "a_start": { "content": "<a href=\"/GroupAdmin\">" },
         "a_end": { "content": "</a>" }
     } },
     "user_changed_group_name": { "message": "$A_START$$NAME$$A_END$ a changé.e le nom du groupe en $GROUP_NAME$", "description": "This is used when a user in a group changes the group name (display name)", "placeholders": {
-        "name": { "content": "Group Admin" },
+        "name": { "content": "Administrateur du groupe" },
         "group_name": { "content": "Example Group" },
         "a_start": { "content": "<a href=\"/GroupAdmin\">" },
         "a_end": { "content": "</a>" }
     } },
     "user_added_you_inbox": { "message": "$NAME$ vous a ajouté.e", "description": "This is used when a group admin adds you to the group chat (display names, inbox list only)", "placeholders": {
-        "name": { "content": "Group Admin" }
+        "name": { "content": "Administrateur du groupe" }
     } },
     "user_added_you_msg": {
         "message": "$A_START$$NAME$$A_END$ vous a ajouté.e<br>Il y a $NUMBER$ autres personnes dans ce groupe",
         "description": "This is used when a group admin adds you to the group chat (display names, messages only)",
         "example": "<a href=\"/GroupAdmin\">Group Admin</a> added you<br>There are 6 other people in this group",
         "placeholders": {
-            "name": { "content": "Group Admin" },
+            "name": { "content": "Administrateur du groupe" },
             "number": { "content": "6" },
             "a_start": { "content": "<a href=\"/GroupAdmin\">" },
             "a_end": { "content": "</a>" }
@@ -647,7 +647,7 @@
     "suspended_user_desc": { "message": "Le profil que vous essayez de voir est suspendu." },
     "show_boring_indicators": { "message": "Afficher un indicateur sur la page des abonnés/abonnements si le dernier tweet de la personne est un retweet, une citation, inexistant ou ancien" },
     "hide_original_languages":{"message": "Cacher le message original lorsqu'il est traduit" },
-	"blocked": { "message": "bloqué.e" },
+	"blocked": { "message": "Bloqué.e" },
     "use_retweeted_id": { "message": "Lorsqu'on aime ou retweete un retweet, notifier l'utilisateur.rice qui a retweeté.e." },
     "show_based_in": { "message": "Afficher là où le compte est basé" },
     "based_in": { "message": "Basé en :" },

@@ -41,7 +41,6 @@
     --birthday-icon: "\f033";
     --joined-icon: "\f177";
 }
-
 @font-face {
     font-family: 'RosettaIcons';
     src: url(chrome-extension://__MSG_@@extension_id__/fonts/rosetta.woff), url(https://dimden.dev/fonts/rosetta.woff);
@@ -61,25 +60,20 @@ h1, h2, h3, h4, h5, h6 {
 body {
     overflow-x: hidden;
 }
-
 ::-webkit-scrollbar {
     width: 6px;
 }
-
 ::-webkit-scrollbar-track {
     background: var(--background-color);
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--link-color);
     border-radius: 3px;
 }
-
 input, textarea {
     background-color: var(--input-background);
     color: var(--default-text-color)
 }
-
 #navbar {
     position: fixed;
     background-color: var(--background-color);
@@ -93,7 +87,6 @@ input, textarea {
     color: var(--darker-gray);
     padding-right: calc(100vw - 100%);
 }
-
 #navbar-line {
     top: 46px;
     position: fixed;
@@ -103,12 +96,10 @@ input, textarea {
     z-index: 99;
     left: 0;
 }
-
 #navbar-container {
     margin: 0 auto;
     max-width: 1222px;
 }
-
 #twitter-logo-div {
     display: block;
     text-align: center;
@@ -142,7 +133,6 @@ input, textarea {
 .center-text:hover {
     text-decoration: underline;
 }
-
 #home:before {
     content: "\f053";
 }
@@ -161,6 +151,7 @@ input, textarea {
 .menu-active#messages:before {
     content: var(--messages-icon-active);
 }
+#home, #notifications, #messages, 
 #pin-lists, #pin-bookmarks, #pin-profile, #pin-likes {
     background-color: var(--background-color);
 }
@@ -188,25 +179,21 @@ input, textarea {
 .menu-active#pin-likes:before {
     content: var(--favorite-icon-content-click);
 }
-
 #navbar a:before {
     vertical-align: sub;
     margin-right: 7px;
     font-family: var(--icon-font);
     font-size: 20px;
 }
-
 #navbar a {
     color: var(--darker-gray);
     text-decoration: none;
     text-wrap: auto;
     z-index: 98;
 }
-
 #navbar a:hover {
     color: var(--link-color);
 }
-
 #navbar-links a {
     padding: 13px 15px;
     /*padding-bottom: 16px;*/
@@ -220,13 +207,11 @@ input, textarea {
 #navbar-links a.menu-active {
     padding-bottom: 16px;
 }
-
 @-moz-document url-prefix() {
     #navbar-links a {
         padding-bottom: 15px;
     }
 }
-
 #navbar-links a:hover {
     box-shadow: 0px -7px 0px -4px var(--link-color) inset;
     transition: 0.2s;
@@ -240,7 +225,6 @@ input, textarea {
 .menu-active:before {
     color: var(--link-color) !important;
 }
-
 .nav-count {
     background: var(--link-color);
     color: var(--background-color);
@@ -267,7 +251,6 @@ input, textarea {
     height: 14px;
     margin-top: -3px;
 }
-
 #navbar-right {
     float: right;
     position: relative;
@@ -276,7 +259,6 @@ input, textarea {
     z-index: 98;
     margin-right: 15px;
 }
-
 #search-input, #user-search-input {
     display: block;
     -moz-box-sizing: border-box;
@@ -297,7 +279,6 @@ input, textarea {
     padding: 0;
     padding-bottom: 6px;
 }
-
 #search-input:focus, #user-search-input:focus {
     outline: none;
     color: var(--almost-black);
@@ -305,7 +286,6 @@ input, textarea {
     background-color: var(--background-color);
     box-shadow: none;
 }
-
 #search-icon, #user-search-icon {
     border: none;
     background: none;
@@ -315,7 +295,6 @@ input, textarea {
     right: 6px;
     cursor: pointer;
 }
-
 #search-icon:before, #user-search-icon:before {
     content: "\f058";
     vertical-align: sub;
@@ -329,16 +308,13 @@ input, textarea {
     right: 0;
     padding-top: 4px;
 }
-
 #navbar-user {
     margin-left: 15px;
 }
-
 #navbar-user-avatar {
     border-radius: 5px;
     cursor: pointer;
 }
-
 .modal {
     position: fixed;
     z-index: 200;
@@ -374,7 +350,6 @@ input, textarea {
         opacity: 1
     }
 }
-
 .gif-picker-modal {
     min-width: 420px;
     max-width: 520px;
@@ -419,7 +394,6 @@ input, textarea {
     right: 5px;
     position: absolute;
 }
-
 .modal-close:hover,
 .modal-close:focus {
     color: var(--default-text-color);
@@ -457,7 +431,6 @@ input, textarea {
     background: var(--background-color);
     opacity: 0.2;
 }
-
 .navbar-new-tweet-avatar, .new-message-user-avatar {
     vertical-align: top;
     border-radius: 5px;
@@ -687,7 +660,6 @@ input, textarea {
     font-size: 10px !important;
     display: inline !important;
 }
-
 .search-result-item {
     display: block;
 }
@@ -944,7 +916,6 @@ input, textarea {
     width: 32px;
     height: 32px;
 }
-
 .message-element-self.message-element-continue .message-body:after,
 .message-element-other.message-element-continue .message-body:after {
     content: '';
@@ -960,7 +931,6 @@ input, textarea {
     margin-right: 0;
     margin-left: 0;
 }
-
 .message-element.message-element-continue {
     margin-bottom: 2px;
 }
@@ -1185,7 +1155,6 @@ input, textarea {
     color: var(--light-gray);
     margin-right: 5px;
 }
-
 .name-top {
     position: static;
     width: 595px;
@@ -1304,19 +1273,16 @@ input, textarea {
     color: var(--light-gray);
     font-size: 14px
 }
-
 .tweet-reply-to {
     display: flow-root;
     font-size: 13px;
     color: var(--light-gray);
     padding-bottom: 3px;
 }
-
 .tweet-footer-stat {
     display: grid;
     text-decoration: none
 }
-
 .tweet-footer {
     border-bottom: 1px solid var(--border);
     border-top: 1px solid var(--border);
@@ -1325,21 +1291,18 @@ input, textarea {
     margin-top: 10px;
     width: 100%
 }
-
 .tweet-footer-stats {
     border-right: 1px solid var(--border);
     display: inline-flex;
     float: left;
     padding-bottom: 5px
 }
-
 .tweet-footer-favorites {
     display: inline-flex;
     float: left;
     margin-left: 10px;
     margin-top: 12px
 }
-
 .tweet-footer-stat-text {
     color: var(--light-gray);
     float: left;
@@ -1349,11 +1312,9 @@ input, textarea {
     padding-right: 20px;
     text-transform: uppercase
 }
-
 .tweet-footer-stat:hover .tweet-footer-stat-text {
     color: var(--link-color)
 }
-
 .tweet-footer-stat-count {
     color: var(--link-color);
     font-size: 18px;
@@ -1361,23 +1322,19 @@ input, textarea {
     line-height: 20px;
     padding-right: 26px;
 }
-
 .tweet-time[hidden] {
     display: none !important
 }
-
 .tweet-header-info-main {
     display: inline-grid !important;
     width: fit-content
 }
-
 .tweet-header-info-main>b {
     font-size: 18px;
     line-height: 1.25;
     margin-top: 3px;
     padding-top: 2px
 }
-
 span.tweet-body-text {
     white-space: pre-wrap;
     word-break: break-word;
@@ -1386,15 +1343,12 @@ span.tweet-body-text {
 #notification-text {
     font-family: var(--tweet-font);
 }
-
 .tweet-body-main {
     margin-top: 10px
 }
-
 .tweet-main {
     padding: 20px
 }
-
 .emoji, .hashflag {
     width: 16px;
     height: 16px;
@@ -1402,43 +1356,36 @@ span.tweet-body-text {
     margin-right: 2px;
     vertical-align: middle;
 }
-
 .tweet-body-text-short .emoji,
 .tweet-body-text-short .hashflag {
     width: 26px !important;
     height: 26px !important;
     vertical-align: middle !important;
 }
-
 .tweet-body-text-long .emoji,
 .tweet-body-text-long .hashflag {
     vertical-align: middle !important;
 }
-
 #user-name .emoji,
 #profile-name .emoji {
     width: 26px !important;
     height: 26px !important;  
 }
-
 .tweet-footer-favorites-img {
     border-radius: 5px;
     margin-right: 5px
 }
-
 .tweet-header-follow {
     float: right;
     margin-top: 2px;
     padding: 9px 12px !important
 }
-
 .following-item-btn {
     bottom: 52px;
     float: right;
     height: 40px;
     position: relative
 }
-
 .following-item-text {
     bottom: 14px;
     display: inline-block;
@@ -1446,21 +1393,17 @@ span.tweet-body-text {
     position: relative;
     width: fit-content
 }
-
 .following-item {
     margin-bottom: 5px
 }
-
 .following-list,
 .followers-list {
     padding: 10px
 }
-
 .following-item-name {
     position: absolute;
     width: 300px
 }
-
 .new-tweet-user-search {
     background-color: var(--background-color);
     color: var(--almost-black);
@@ -1468,17 +1411,14 @@ span.tweet-body-text {
     position: absolute;
     z-index: 5
 }
-
 .new-tweet-user-search span {
     border-radius: 5px;
     cursor: pointer;
     padding: 2px
 }
-
 .tweet, .notification {
     -webkit-tap-highlight-color: transparent;
 }
-
 .new-tweet-user-search span:hover,
 .search-result-item-active {
     background-color: var(--link-color) !important;
@@ -1491,7 +1431,6 @@ span.tweet-body-text {
 .new-tweet-avatar {
     vertical-align: top
 }
-
 .new-tweet-text {
     border: 1px solid var(--border);
     border-radius: 3px;
@@ -1504,19 +1443,15 @@ span.tweet-body-text {
     scrollbar-width: thin;
     width: 469px
 }
-
 .new-tweet-text::-webkit-scrollbar {
     width: 2px
 }
-
 .new-tweet-text:focus {
     outline: none
 }
-
 .new-tweet-text-focused {
     height: 100px !important
 }
-
 .new-tweet {
     background-color: var(--new-tweet-over);
     border-bottom: none !important;
@@ -1535,13 +1470,10 @@ span.tweet-body-text {
     padding: 10px;
     width: 560px;
 }
-
-
 .new-tweet-container {
     background-color: var(--link-color);
     width: fit-content
 }
-
 .new-tweet-media-div {
     bottom: 36px;
     cursor: pointer;
@@ -1549,23 +1481,19 @@ span.tweet-body-text {
     position: relative;
     right: 15px
 }
-
 .new-tweet-media-div-focused {
     bottom: 112px !important
 }
-
 .new-tweet-media:before {
     color: var(--link-color);
     content: "\f159";
     font: 20px var(--icon-font);
 }
-
 .new-tweet-button {
     float: right;
     margin-top: 5px;
     position: relative
 }
-
 .new-tweet-char {
     color: var(--light-gray);
     font-size: 12px;
@@ -1587,7 +1515,6 @@ span.tweet-body-text {
     text-decoration: none;
     top: -2px
 }
-
 .tweet-interact span:before {
     -webkit-font-smoothing: antialiased;
     color: #ccd6dd;
@@ -1598,7 +1525,6 @@ span.tweet-body-text {
     display: inline-block;
     min-width: 16px;
 }
-
 .tweet-view-self-thread-div {
     bottom: 35px;
     position: relative
@@ -1608,11 +1534,9 @@ span.tweet-body-text {
     margin-top: 2px;
     text-decoration: none
 }
-
 .tweet-no-top {
     border-top: none !important
 }
-
 .tweet-view-self-thread-line {
     background-color: var(--border);
     height: 32px;
@@ -1622,7 +1546,6 @@ span.tweet-body-text {
     width: 2px;
     z-index: 1;
 }
-
 .tweet-view-self-thread-line-dots {
     border: 2px var(--background-color) solid;
     display: unset;
@@ -1633,7 +1556,6 @@ span.tweet-body-text {
     width: 12px;
     z-index: 2;
 }
-
 .tweet:hover .tweet-view-self-thread-line-dots {
     border: 2px var(--dark-background-color) solid !important
 }
@@ -1644,7 +1566,6 @@ span.tweet-body-text {
     font-weight: 300;
     margin: 0
 }
-
 .cool-header {
     margin-bottom: 10px
 }
@@ -1717,7 +1638,6 @@ span.tweet-body-text {
     z-index: 2;
     position: relative;
 }
-
 .tweet-active:not(.tweet-view)::after {
     content: "•";
     float: right;
@@ -1747,45 +1667,36 @@ span.tweet-body-text {
 .decline {
     color: darkred;
 }
-
 .tweet-interact-more-menu-copy:before {
     content: "\f203"
 }
 .tweet-interact-more-menu-separate:before {
     content: "\f183"
 }
-
 .tweet-interact-more-menu-separate {
     display: none !important;
 }
-
 .tweet-interact-more-menu-share:before {
     content: "\f185"
 }
 .tweet-interact-more-menu-share-dms:before {
     content: "\f157"
 }
-
 .tweet-interact-more-menu-analytics:before {
     content: "\f200"
 }
-
 .tweet-interact-more-menu-refresh:before {
     content: "\f303"
 }
-
 .tweet-interact-more-menu-download:before {
     content: "\f186"
 }
-
 .tweet-interact-more-menu-download-gif:before {
     content: "\f309"
 }
-
 .tweet-interact-more-menu-delete:before {
     content: "\f154"
 }
-
 .tweet-interact-more-menu-follow:before {
     content: "\f056"
 }
@@ -1795,7 +1706,6 @@ span.tweet-body-text {
 .tweet-interact-more-menu-hide:before {
     content: "\f096"
 }
-
 .tweet-interact-more-menu-feedback:before {
     content: "\f044"
 }
@@ -1853,7 +1763,6 @@ span.tweet-body-text {
 .compact-trend {
     margin-bottom: 3px;
 }
-
 emoji-picker {
     position: absolute;
     z-index: 201;
@@ -1861,7 +1770,6 @@ emoji-picker {
 .poll-date, .navbar-poll-date {
     width: 50px;
 }
-
 .tweet-reply-cancel:hover,
 .tweet-quote-cancel:hover,
 .tweet-reply-upload:hover,
@@ -1873,7 +1781,6 @@ emoji-picker {
     cursor: pointer;
     text-decoration: underline
 }
-
 .new-tweet-emojis {
     float: right;
     cursor: pointer;
@@ -1967,7 +1874,6 @@ emoji-picker {
 .tweet-interact-more-menu span {
     cursor: pointer;
 }
-
 .tweet-interact-retweet-menu span:before,
 .tweet-interact-more-menu span:before {
     margin-right: 8px !important;
@@ -2005,12 +1911,10 @@ emoji-picker {
     bottom: 52px;
     height: 40px
 }
-.user-item-btn.blocked
-    {
+.user-item-btn.blocked {
         background-color: red;   
         border: 1px solid darkred; 
-    }
-
+}
 .user-item-text {
     width: fit-content;
     display: inline-block;
@@ -2018,11 +1922,9 @@ emoji-picker {
     bottom: 14px;
     margin-left: 8px
 }
-
 .user-item-link:hover {
     text-decoration: none
 }
-
 .user-item {
     margin-bottom: 5px
 }
@@ -2066,12 +1968,12 @@ emoji-picker {
     position: absolute;
     word-break: keep-all;
 }
-
 .tweet .tweet-header-name {
     max-width: 300px;
     display: inline-block;
     overflow: hidden;
     vertical-align: bottom;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 .tweet-translate, .tweet-quote-translate {
@@ -3199,6 +3101,7 @@ video::-internal-media-controls-overlay-cast-button {
         position: fixed;
         width: 1000px;
         height: 1000px;
+        top: 50px;
         left: 269px;
         backdrop-filter: blur(5px);
         transition: 0.2s;

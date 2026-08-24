@@ -1229,6 +1229,7 @@ body.body-old-ui .user-item-btn.follow:before {
 #tweet-to {
     color: var(--link-color) !important;
     padding: 10px;
+    text-overflow: ellipsis;
     color: var(--background-color);
     cursor: pointer;
     border: 1px solid var(--border);
@@ -1688,9 +1689,6 @@ body.body-old-ui .user-item-btn.follow:before {
         padding-bottom: 0;
         pointer-events: auto;
         margin-top: 0;
-    }
-    #tweet-nav {
-        width: 590px !important;
     }
     #profile-banner {
         height: 300px;
