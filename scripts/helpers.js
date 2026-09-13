@@ -319,6 +319,7 @@ async function handleFiles(files, mediaArray, mediaContainer, is_dm = false) {
                 new Viewer(mediaContainer, {
                     transition: false,
                     zoomRatio: 0.3,
+                    url: getOriginalImageUrl,
                 });
             });
             div.append(alt);
@@ -496,6 +497,50 @@ function escapeHTML(unsafe) {
         .replaceAll("'", "&apos;")
         .replaceAll("<", "&lt;")
         .replaceAll(">", "&gt;"));
+}
+
+// pick a video/mp4 URL using saved preferred quality, highest quality, or data-saver lowest.
+function getPreferredVideoUrl(variants) {
+    let sorted = variants.slice().sort((a, b) => {
+        if (!b.bitrate) return -1;
+        return b.bitrate - a.bitrate;
+    });
+    let withBitrate = sorted.filter((v) => v.bitrate);
+    if (!withBitrate.length) {
+        let fallback = sorted.find((v) => v.content_type === "video/mp4");
+        return (fallback || sorted[0]).url;
+    }
+    if (typeof vars.savePreferredQuality !== "boolean") {
+        chrome.storage.sync.set({ savePreferredQuality: true }, () => {});
+        vars.savePreferredQuality = true;
+    }
+    if (localStorage.preferredQuality && vars.savePreferredQuality) {
+        return withBitrate.reduce((prev, curr) => {
+            return Math.abs(
+                parseInt(curr.url.match(/\/(\d+)x/)[1]) -
+                    parseInt(localStorage.preferredQuality)
+            ) <
+                Math.abs(
+                    parseInt(prev.url.match(/\/(\d+)x/)[1]) -
+                        parseInt(localStorage.preferredQuality)
+                )
+                ? curr
+                : prev;
+        }).url;
+    }
+    if (
+        window.navigator &&
+        navigator.connection &&
+        navigator.connection.type === "cellular" &&
+        !vars.disableDataSaver
+    ) {
+        return withBitrate.reduce((prev, curr) => {
+            return parseInt(curr.bitrate) < parseInt(prev.bitrate)
+                ? curr
+                : prev;
+        }).url;
+    }
+    return withBitrate[0].url;
 }
 
 function html(strings, ...values) {
@@ -988,6 +1033,7 @@ function generateCard(tweet, tweetElement, user) {
                         new Viewer(img, {
                             transition: false,
                             zoomRatio: 0.3,
+                            url: getOriginalImageUrl,
                         });
                     });
                     tweetElement
@@ -2386,6 +2432,18 @@ const mediaClasses = [
     "tweet-media-element-two",
 ];
 
+function getOriginalImageUrl(image) {
+    let src = image.src;
+    if (!src || src.startsWith("data:")) return src;
+    if (src.endsWith(":orig")) return src;
+    if (/[?&]name=/.test(src)) {
+        return src.replace(/([?&])name=[^&]*/, "$1name=orig");
+    }
+    if (/:(?:small|medium|large|thumb)$/.test(src)) {
+        return src.replace(/:(?:small|medium|large|thumb)$/, "");
+    }
+    return src + "?name=orig";
+}
 function calculateSize(x, y, max_x, max_y) {
     let ratio = x / y;
     let iw = innerWidth;
@@ -3796,21 +3854,10 @@ async function appendTweet(t, timelineContainer, options = {}) {
                         e.target.className &&
                         e.target.className.includes("tweet-media-element")
                     ) {
-                        if (
-                            !e.target.src.includes("?name=") &&
-                            !e.target.src.endsWith(":orig") &&
-                            !e.target.src.startsWith("data:")
-                        ) {
-                            e.target.src += "?name=orig";
-                        } else if (e.target.src.includes("?name=small")) {
-                            e.target.src = e.target.src.replace(
-                                "?name=small",
-                                "?name=large"
-                            );
-                        }
                         new Viewer(e.target.parentElement, {
                             transition: false,
                             zoomRatio: 0.3,
+                            url: getOriginalImageUrl,
                         });
                         e.target.click();
                         return;
@@ -4096,21 +4143,10 @@ async function appendTweet(t, timelineContainer, options = {}) {
                     );
                 }
                 if (e.target.tagName === "IMG") {
-                    if (
-                        !e.target.src.includes("?name=") &&
-                        !e.target.src.endsWith(":orig") &&
-                        !e.target.src.startsWith("data:")
-                    ) {
-                        e.target.src += "?name=orig";
-                    } else if (e.target.src.includes("?name=small")) {
-                        e.target.src = e.target.src.replace(
-                            "?name=small",
-                            "?name=large"
-                        );
-                    }
                     new Viewer(tweetMedia, {
                         transition: false,
                         zoomRatio: 0.3,
+                        url: getOriginalImageUrl,
                     });
                     e.target.click();
                 }

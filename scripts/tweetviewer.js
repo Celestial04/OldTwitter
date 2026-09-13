@@ -1866,11 +1866,11 @@ class TweetViewer {
                                                                         !vars.disableDataSaver
                                                                       ? "?name=small"
                                                                       : "")
-                                                                : m.video_info.variants.find(
-                                                                      (v) =>
-                                                                          v.content_type ===
-                                                                          "video/mp4"
-                                                                  ).url
+                                                                : getPreferredVideoUrl(
+                                                                      m
+                                                                          .video_info
+                                                                          .variants
+                                                                  )
                                                         }" class="tweet-media-element tweet-media-element-quote ${
                                                             m.type ===
                                                             "animated_gif"
@@ -3485,21 +3485,10 @@ class TweetViewer {
                     );
                 }
                 if (e.target.tagName === "IMG") {
-                    if (
-                        !e.target.src.includes("?name=") &&
-                        !e.target.src.endsWith(":orig") &&
-                        !e.target.src.startsWith("data:")
-                    ) {
-                        e.target.src += "?name=orig";
-                    } else if (e.target.src.includes("?name=small")) {
-                        e.target.src = e.target.src.replace(
-                            "?name=small",
-                            "?name=large"
-                        );
-                    }
                     new Viewer(tweetMedia, {
                         transition: false,
                         zoomRatio: 0.3,
+                        url: getOriginalImageUrl,
                     });
                     e.target.click();
                 }
