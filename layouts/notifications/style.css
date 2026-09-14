@@ -426,7 +426,9 @@ body {
 }
 
 #wtf-refresh,
-#wtf-viewall {
+#wtf-viewall,
+#trends-refresh,
+#trends-viewall {
     color: var(--light-gray);
     cursor: pointer;
     font-size: 12px;

@@ -80,14 +80,14 @@ body {
     white-space: nowrap;
 }
 #user-handle {
-    margin: 0;
-    position: relative;
+    bottom: 48px;
     color: var(--lil-darker-gray);
     font-size: 14px;
     font-weight: 100;
     left: 95px;
-    bottom: 48px;
-    width: fit-content;
+    margin: 0;
+    position: relative;
+    width: fit-content
 }
 #user-stats {
     display: inline-flex;

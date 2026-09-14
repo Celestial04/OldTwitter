@@ -98,6 +98,9 @@ setTimeout(async () => {
         document.getElementById('wtf-refresh').addEventListener('click', async () => {
             renderDiscovery(false);
         });
+            document.getElementById('trends-refresh').addEventListener('click', async () => {
+        renderTrends(false, false);
+        });
     } catch(e) {
         setTimeout(() => location.reload(), 2500);
         console.error(e);
